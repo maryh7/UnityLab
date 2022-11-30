@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Wall
+  - Enemy
+  - Jelly
   layers:
   - Default
   - TransparentFX

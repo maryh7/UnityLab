@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JellyMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class JellyMovement : MonoBehaviour
 	[SerializeField] Rigidbody2D rigid;
 	[SerializeField] int speed;
 	[SerializeField] bool isFacingRight = true;
+	[SerializeField] private AudioClip fail;
 	
 	void Start()
     {
@@ -38,6 +40,12 @@ public class JellyMovement : MonoBehaviour
 	{
 		transform.Rotate(0, 180, 0);
 		isFacingRight = !isFacingRight; 
+	}
+
+	public void Pop()
+	{
+		SoundManager.instance.PlaySound(fail);
+		Destroy(gameObject);
 	}
 
 } 
