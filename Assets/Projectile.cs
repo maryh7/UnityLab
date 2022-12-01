@@ -18,7 +18,8 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         JellyMovement jelly = collision.GetComponent<JellyMovement>();
-        if (collision.CompareTag("Jelly")) {
+        if (collision.CompareTag("Jelly")) 
+        {
             if (jelly != null) 
             {
                 jelly.Pop();

@@ -9,7 +9,7 @@ public class JellyMovement : MonoBehaviour
 	[SerializeField] Rigidbody2D rigid;
 	[SerializeField] int speed;
 	[SerializeField] bool isFacingRight = true;
-	[SerializeField] private AudioClip fail;
+	[SerializeField] private AudioClip failS;
 	
 	void Start()
     {
@@ -30,11 +30,11 @@ public class JellyMovement : MonoBehaviour
 
  	}
 
-	// void FixedUpdate() 
-	// {
-	// 	if (transform.position.x <= 5 && isFacingRight || transform.position.x >= -5 && !isFacingRight)
-	// 		Flip();
-	// }
+	void FixedUpdate() 
+	{
+		// if (transform.position.x <= 5 && isFacingRight || transform.position.x >= -5 && !isFacingRight) {
+		// 	Flip();
+	}
 
 	void Flip()
 	{
@@ -44,7 +44,7 @@ public class JellyMovement : MonoBehaviour
 
 	public void Pop()
 	{
-		SoundManager.instance.PlaySound(fail);
+		SoundManager.instance.PlaySound(failS);
 		Destroy(gameObject);
 	}
 
