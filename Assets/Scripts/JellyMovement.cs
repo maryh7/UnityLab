@@ -7,15 +7,19 @@ public class JellyMovement : MonoBehaviour
 {
 	private Vector2 dir = Vector2.right;
 	[SerializeField] Rigidbody2D rigid;
-	[SerializeField] int speed;
+	[SerializeField] float speed;
 	[SerializeField] bool isFacingRight = true;
 	[SerializeField] private AudioClip failS;
+
+	[SerializeField] bool diff = false;
+	public Vector2 xy;
 	
 	void Start()
     {
 		if (rigid == null)
 			rigid = GetComponent<Rigidbody2D>();
-		speed = 5;
+
+		InvokeRepeating("Scale", 1f, 1f);
     }
 	void Update()
 	{
@@ -34,6 +38,7 @@ public class JellyMovement : MonoBehaviour
 	{
 		// if (transform.position.x <= 5 && isFacingRight || transform.position.x >= -5 && !isFacingRight) {
 		// 	Flip();
+
 	}
 
 	void Flip()
@@ -46,6 +51,29 @@ public class JellyMovement : MonoBehaviour
 	{
 		SoundManager.instance.PlaySound(failS);
 		Destroy(gameObject);
+	}
+
+	public void Scale()
+	{
+		if (diff)
+		{
+			xy = transform.localScale;
+			xy.x += 0.2f;
+			xy.y += 0.2f;
+		}
+		else
+		{
+			xy = transform.localScale;
+			xy.x += 0.1f;
+			xy.y += 0.1f;
+		}
+	
+		transform.localScale = xy;
+
+		if (xy.x > 2f)
+		{
+			Pop();
+		}
 	}
 
 } 
