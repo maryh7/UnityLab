@@ -25,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && cdTimer > cooldown && movement.canAttack()) {
+        if (Input.GetKeyDown(KeyCode.F) && cdTimer > cooldown && movement.canAttack()) {
             Attack();
         }
         cdTimer += Time.deltaTime;

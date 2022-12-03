@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Enemy
   - Jelly
+  - Resumed
+  - Paused
   layers:
   - Default
   - TransparentFX
