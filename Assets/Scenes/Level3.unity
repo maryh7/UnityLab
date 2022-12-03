@@ -2072,7 +2072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8617181689149330324, guid: a4f37861cb664b045b938d8896b9e15e, type: 3}
       propertyPath: diff
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8617181689149330324, guid: a4f37861cb664b045b938d8896b9e15e, type: 3}
       propertyPath: speed
@@ -5181,11 +5181,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8617181689149330324, guid: a4f37861cb664b045b938d8896b9e15e, type: 3}
       propertyPath: diff
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8617181689149330324, guid: a4f37861cb664b045b938d8896b9e15e, type: 3}
       propertyPath: speed
-      value: 9
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617181689149330324, guid: a4f37861cb664b045b938d8896b9e15e, type: 3}
+      propertyPath: reduce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8617181689149330325, guid: a4f37861cb664b045b938d8896b9e15e, type: 3}
       propertyPath: m_SortingLayer

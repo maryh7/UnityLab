@@ -15,7 +15,6 @@ public class Projectile : MonoBehaviour
         rigid.velocity = transform.right * speed;
     }
 
-    Score sc = new Score();
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         JellyMovement jelly = collision.GetComponent<JellyMovement>();
@@ -24,11 +23,7 @@ public class Projectile : MonoBehaviour
             if (jelly != null) 
             {
                 jelly.Pop();
-                //Score.score += 2;
-
-                sc.AddPoints();
-                
-
+                Score.AddPoints();
             }
             Destroy(gameObject);
         }

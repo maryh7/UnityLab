@@ -23,6 +23,7 @@ public class ButtonFunctions : MonoBehaviour
     {
         string s = playerName.text;
         PersistentData.Instance.SetName(s);
+        Score.Reset();
         SceneManager.LoadScene("Level1");
     }
 
@@ -42,7 +43,13 @@ public class ButtonFunctions : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
 
-    public void Quit() {
+    public void HighScore() 
+    {
+        SceneManager.LoadScene("EndScene");
+    }
+    
+    public void Quit() 
+    {
         Application.Quit();
     }
 

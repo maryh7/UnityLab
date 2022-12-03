@@ -12,7 +12,8 @@ public class JellyMovement : MonoBehaviour
 	[SerializeField] private AudioClip failS;
 
 	[SerializeField] bool diff = false;
-	public Vector2 xy;
+	
+	public static Vector2 xy;
 	
 	void Start()
     {
@@ -73,7 +74,14 @@ public class JellyMovement : MonoBehaviour
 		if (xy.x > 2f)
 		{
 			Pop();
+			Restart();
 		}
+	}
+
+	public static void Restart() 
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		Score.ResetScore();
 	}
 
 } 
