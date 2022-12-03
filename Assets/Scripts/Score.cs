@@ -16,17 +16,12 @@ public class Score : MonoBehaviour
     const int REDUCED_POINTS = 1;
     private static int scoreThreshold = 3;
 
-    // void Awake() 
-    // {
-    //     level = SceneManager.GetActiveScene().buildIndex;
-    // }
-
     // Start is called before the first frame update
     void Start()
     {
         level = SceneManager.GetActiveScene().buildIndex;
-        //playerName = PersistentData.Instance.GetName();
-        //score = PersistentData.Instance.GetScore();
+        playerName = PersistentData.Instance.GetName();
+        score = PersistentData.Instance.GetScore();
         sceneTxt.text = "Level: " + (level);
         scoreTxt.text = "Score: " + score;
         
@@ -42,7 +37,7 @@ public class Score : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points;
-        //PersistentData.Instance.SetScore(score);
+        PersistentData.Instance.SetScore(score);
 
         if (score >= scoreThreshold)
         {
